@@ -7,10 +7,11 @@ UENUM(BlueprintType)
 enum class EBodyPartType : uint8
 {
 	None,
-	Body,
+	Eyes,
 	Wings,
 	Legs,
-	Antenna
+	Antenna,
+	Accessories
 	
 };
-ENUM_RANGE_BY_FIRST_AND_LAST(EBodyPartType, EBodyPartType::None, EBodyPartType::Antenna)
+ENUM_RANGE_BY_FIRST_AND_LAST(EBodyPartType, EBodyPartType::None, EBodyPartType::Accessories)

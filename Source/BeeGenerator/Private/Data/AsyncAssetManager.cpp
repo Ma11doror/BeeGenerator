@@ -7,7 +7,7 @@ UAsyncAssetManager* UAsyncAssetManager::GetAsyncAssetManager()
 	return AssetManager;
 }
 
-void UAsyncAssetManager::LoadBodyPartAssetAsync(FPrimaryAssetId BodyPartId, FOnBodyPartLoaded OnLoadDelegate)
+void UAsyncAssetManager::LoadBodyPartAssetAsync(FPrimaryAssetId BodyPartId, const FOnBodyPartLoaded OnLoadDelegate)
 {
 	if(!BodyPartId.IsValid()) { return; }
 

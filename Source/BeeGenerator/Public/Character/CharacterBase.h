@@ -28,9 +28,15 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Customisible Meshes", Transient)
 	USkeletalMeshComponent* AntennaSlot;
 	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Customisible Meshes", Transient)
+	USkeletalMeshComponent* AccessorySlot;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Customisible Meshes", Transient)
+	USkeletalMeshComponent* EyesSlot;
+	
 	
 
-	DECLARE_DELEGATE_OneParam(FBodyPartLoaded, UBodyPartAsset* /* */)
+	DECLARE_DELEGATE_OneParam(FBodyPartLoaded, const UBodyPartAsset* /* */)
 	FBodyPartLoaded OnBodyPartLoadFinished;
 
 	UFUNCTION(BlueprintImplementableEvent)
@@ -42,9 +48,9 @@ protected:
 	UFUNCTION(BlueprintCallable)
 	void AsyncLoadBodyPart(const TArray<FPrimaryAssetId> InBodyPartsArray);
 
-	void OnBodyPartLoaded(UBodyPartAsset* BodyPartAsset);
+	void OnBodyPartLoaded(const UBodyPartAsset* BodyPartAsset);
 
 private:
-
+	UPROPERTY()
 	TWeakObjectPtr<UAsyncAssetManager> AssetManager = nullptr;
 };

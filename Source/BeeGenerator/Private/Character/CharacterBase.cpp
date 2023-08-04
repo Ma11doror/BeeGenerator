@@ -15,6 +15,12 @@ ACharacterBase::ACharacterBase()
 	AntennaSlot = CreateOptionalDefaultSubobject<USkeletalMeshComponent>("AntennaMesh");
 	AntennaSlot->SetupAttachment(GetMesh());
 	
+	AccessorySlot = CreateOptionalDefaultSubobject<USkeletalMeshComponent>("AccessoryMesh");
+	AccessorySlot->SetupAttachment(GetMesh());
+	
+	EyesSlot = CreateOptionalDefaultSubobject<USkeletalMeshComponent>("AccessoryMesh");
+	EyesSlot->SetupAttachment(GetMesh());
+
 }
 
 void ACharacterBase::BeginPlay()
@@ -38,7 +44,7 @@ void ACharacterBase::AsyncLoadBodyPart(const TArray<FPrimaryAssetId> InBodyParts
 	}
 }
 
-void ACharacterBase::OnBodyPartLoaded(UBodyPartAsset* BodyPartAsset)
+void ACharacterBase::OnBodyPartLoaded(const UBodyPartAsset* BodyPartAsset)
 {
 	OnBodyPartLoadFinished.Unbind();
 	ApplyBodyPart(BodyPartAsset);

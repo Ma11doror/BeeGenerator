@@ -12,11 +12,11 @@ class BEEGENERATOR_API UAsyncAssetManager : public UAssetManager
 
 public:
 
-	DECLARE_DELEGATE_OneParam(FOnBodyPartLoaded, UBodyPartAsset*)
+	DECLARE_DELEGATE_OneParam(FOnBodyPartLoaded, const UBodyPartAsset*)
 
 	static  UAsyncAssetManager* GetAsyncAssetManager();
 	
-	virtual void LoadBodyPartAssetAsync(FPrimaryAssetId BodyPartId, FOnBodyPartLoaded OnLoadDelegate);
+	void LoadBodyPartAssetAsync(FPrimaryAssetId BodyPartId, FOnBodyPartLoaded OnLoadDelegate);
 
 	void OnBodyPartAssetLoaded(TSharedPtr<FStreamableHandle> LoadHandle, FOnBodyPartLoaded DelegateToCall) const;
 };
