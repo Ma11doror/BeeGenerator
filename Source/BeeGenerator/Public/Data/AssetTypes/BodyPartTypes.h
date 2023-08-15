@@ -1,12 +1,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Engine/DataTable.h"
 
 
 UENUM(BlueprintType)
 enum class EBodyPartType : uint8
 {
 	None,
+	Body,
 	Eyes,
 	Wings,
 	Legs,

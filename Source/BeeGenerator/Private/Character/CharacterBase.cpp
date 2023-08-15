@@ -18,7 +18,7 @@ ACharacterBase::ACharacterBase()
 	AccessorySlot = CreateOptionalDefaultSubobject<USkeletalMeshComponent>("AccessoryMesh");
 	AccessorySlot->SetupAttachment(GetMesh());
 	
-	EyesSlot = CreateOptionalDefaultSubobject<USkeletalMeshComponent>("AccessoryMesh");
+	EyesSlot = CreateOptionalDefaultSubobject<USkeletalMeshComponent>("EyesMesh");
 	EyesSlot->SetupAttachment(GetMesh());
 
 }
